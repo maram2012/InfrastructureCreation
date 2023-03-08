@@ -3,12 +3,12 @@ orbs:
   aws-cli: circleci/aws-cli@2.0.3
 jobs:
 
-  create_infrastructure: 
+  create_infrastructure:
     docker:
-        - image: amazon/aws-cli
-      steps:
-        - checkout
-        - run:
+      - image: amazon/aws-cli
+    steps:
+      - checkout
+      - run:
             name: Create Cloudformation Stack
             command: |
               aws cloudformation deploy \
